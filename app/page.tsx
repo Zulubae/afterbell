@@ -22,9 +22,9 @@ export default function Home() {
       setStocks(prev => prev.map(s => {
         const delta = (Math.random() - 0.5) * 1.2;
         return {
-         ...s,
+          ...s,
           price: Math.max(1, s.price + delta),
-          change: delta >= 0? `+${delta.toFixed(2)}` : `${delta.toFixed(2)}`
+          change: delta >= 0 ? `+${delta.toFixed(2)}` : `${delta.toFixed(2)}`
         };
       }));
     }, 2000);
@@ -44,12 +44,12 @@ export default function Home() {
     // @ts-ignore
     if (window.solana) providers.push(window.solana);
     if (providers.length > 0) {
-      try { const res = await providers[0].connect(); setWalletAddr(res.publicKey.toString()); } catch {}
+      try { const res = await providers[0].connect(); setWalletAddr(res.publicKey.toString()); } catch { }
     } else { window.open("https://phantom.app/", "_blank"); }
   };
 
   const borrowAction = (symbol: string) => {
-    if(!walletAddr){ connectWallet(); return; }
+    if (!walletAddr) { connectWallet(); return; }
     alert(`${symbol} deposited as collateral on Kamino!\nYou can borrow up to 60% in USDC (like Kraken Vaults).\nYield: +2% APY paid in ${symbol}x`);
     setShowBorrow(null);
   };
@@ -62,7 +62,7 @@ export default function Home() {
           <div className="text-[11px] tracking-[0.2em] text-zinc-400 font-bold">STOCKLANA 🔔 AFTERBELL</div>
         </div>
 
-        <h1 className="text-[36px] md:text-[56px] font-black leading-[0.9]">The stock market <br/> is open for <br/><span className="text-[#a78bfa]">BUILDING.</span></h1>
+        <h1 className="text-[36px] md:text-[56px] font-black leading-[0.9]">The stock market <br /> is open for <br /><span className="text-[#a78bfa]">BUILDING.</span></h1>
         <p className="text-zinc-400 mt-3 text-[12px] md:text-[13px] max-w-md">NYSE closes at 4PM. Solana never closes. Trade, borrow, and earn yield after the bell.</p>
 
         <div className="flex flex-wrap items-center gap-2 mt-4 text-[10px] font-mono text-zinc-500">
@@ -77,7 +77,7 @@ export default function Home() {
               <div>
                 <div className="flex justify-between items-center">
                   <span className="text-[11px] text-zinc-400 font-bold tracking-widest">{s.symbol}</span>
-                  <span className={`text-[11px] font-bold ${s.change.startsWith('+')? 'text-green-400' : 'text-red-400'}`}>{s.change}</span>
+                  <span className={`text-[11px] font-bold ${s.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}`}>{s.change}</span>
                 </div>
                 <div className="text-[30px] font-black mt-3">${s.price.toFixed(2)}</div>
                 <div className="text-[10px] text-zinc-500 mt-1 font-mono">{s.name}</div>
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
               <div className="flex gap-2 mt-5">
                 <button onClick={() => openSolana(s.symbol)} className="flex-1 bg-[#1e1e28] hover:bg-white hover:text-black border border-[#2a2a32] text-[11px] py-3 rounded-xl font-bold">Trade 24/7 →</button>
-                <button onClick={() => setShowBorrow(showBorrow === s.symbol? null : s.symbol)} className="flex-1 bg-[#7dd3a8]/20 hover:bg-[#7dd3a8] hover:text-black border border-[#7dd3a8]/30 text-[#7dd3a8] text-[11px] py-3 rounded-xl font-bold">Borrow</button>
+                <button onClick={() => setShowBorrow(showBorrow === s.symbol ? null : s.symbol)} className="flex-1 bg-[#7dd3a8]/20 hover:bg-[#7dd3a8] hover:text-black border border-[#7dd3a8]/30 text-[#7dd3a8] text-[11px] py-3 rounded-xl font-bold">Borrow</button>
               </div>
               {showBorrow === s.symbol && (
                 <div className="mt-3 bg-[#0d0d12] border border-[#7dd3a8]/20 rounded-xl p-3">
@@ -149,7 +149,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <button onClick={connectWallet} className="w-full sm:w-auto bg-[#7dd3a8] text-black text-[12px] px-5 py-3 rounded-full font-bold active:scale-95">
-              {walletAddr? `Connected: ${walletAddr.slice(0,6)}...` : "Connect Wallet / Phantom →"}
+              {walletAddr ? `Connected: ${walletAddr.slice(0, 6)}...` : "Connect Wallet / Phantom →"}
             </button>
             <button onClick={() => window.open('https://x.com/solana/status/195064...', '_blank')} className="w-full sm:w-auto bg-[#1e1e28] border border-[#2a2a32] text-[11px] px-5 py-3 rounded-full">
               Why Afterbell? $553M ATH
@@ -158,13 +158,13 @@ export default function Home() {
           {walletAddr && <div className="mt-3 text-[9px] text-zinc-600 font-mono break-all">Your address: {walletAddr}</div>}
         </div>
       </div>
-            <div className="mt-12 p-8 text-center border-t border-gray-800">
+      <div className="mt-12 p-8 text-center border-t border-gray-800">
         <h2 className="text-xl font-bold mb-2">About Afterbell</h2>
         <p className="text-gray-400">Afterbell is a 24/7 brokerage layer for tokenized stocks on Solana.</p>
-        <p className="mt-2 font-bold">Founded by WANDA DESTINY PEBANG — Founder & CEO, Afterbell</p>
+        <p className="mt-2 font-bold">Founded by WANDA DESTINY PEBANG — Founder & CEO, James Theophilus Co-founder, Afterbell</p>
         <p className="text-sm text-gray-500 mt-1">Live at afterbell-rust.vercel.app | GitHub: Zulubae/afterbell</p>
       </div>
-            <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -173,27 +173,27 @@ export default function Home() {
             "name": "Afterbell",
             "url": "https://afterbell-rust.vercel.app",
             "founder": [
-  {
-    "@type": "Person",
-    "name": "Wanda Destiny Pebang",
-    "jobTitle": "Founder & CEO, Afterbell"
-  },
-  {
-    "@type": "Person",
-    "name": "James Theophilus",
-    "jobTitle": "Co-founder, Afterbell"
-  }
-],
-"founders": [
-  {
-    "@type": "Person",
-    "name": "Wanda Destiny Pebang"
-  },
-  {
-    "@type": "Person",
-    "name": "James Theophilus"
-  }
-]
+              {
+                "@type": "Person",
+                "name": "Wanda Destiny Pebang",
+                "jobTitle": "Founder & CEO, Afterbell"
+              },
+              {
+                "@type": "Person",
+                "name": "James Theophilus",
+                "jobTitle": "Co-founder, Afterbell"
+              }
+            ],
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Wanda Destiny Pebang"
+              },
+              {
+                "@type": "Person",
+                "name": "James Theophilus"
+              }
+            ]
           })
         }}
       />
