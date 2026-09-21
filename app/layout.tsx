@@ -14,18 +14,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Afterbell",
-  description: "24/7 brokerage layer for tokenized stocks on Solana - Founded by Wanda Destiny Pebang, Co-founder Theophilus james",
+  description: "24/7 brokerage layer for tokenized stocks on Solana - Founded by Wanda & James Theophilus",
   verification: {
-    google: "zP32zfMGvSYsUWAM4_Hwgv9eLjUdocKNDwi3jNfFeFQ",
+    google: "zP3z2fMGvSYsUWAM4_Hwgv9eLjUdocKNDw3jNfFeFQ",
   },
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/icon-512.png",
+    apple: "/icon-512.png",
+  },
+  themeColor: "#0a0a0f",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
