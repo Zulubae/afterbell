@@ -158,6 +158,12 @@ export default function Home() {
           {walletAddr && <div className="mt-3 text-[9px] text-zinc-600 font-mono break-all">Your address: {walletAddr}</div>}
         </div>
       </div>
+            <div className="mt-12 p-8 text-center border-t border-gray-800">
+        <h2 className="text-xl font-bold mb-2">About Afterbell</h2>
+        <p className="text-gray-400">Afterbell is a 24/7 brokerage layer for tokenized stocks on Solana.</p>
+        <p className="mt-2 font-bold">Founded by WANDA DESTINY PEBANG — Founder & CEO, Afterbell</p>
+        <p className="text-sm text-gray-500 mt-1">Live at afterbell-rust.vercel.app | GitHub: Zulubae/afterbell</p>
+      </div>
     </main>
   );
 }
