@@ -13,8 +13,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Afterbell",
-  description: "24/7 brokerage layer for tokenized stocks on Solana - Founded by Wanda & James Theophilus",
   verification: {
     google: "zP3z2fMGvSYsUWAM4_Hwgv9eLjUdocKNDw3jNfFeFQ",
   },
