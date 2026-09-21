@@ -172,11 +172,28 @@ export default function Home() {
             "@type": "Organization",
             "name": "Afterbell",
             "url": "https://afterbell-rust.vercel.app",
-            "founder": {
-              "@type": "Person",
-              "name": "Wanda Destiny Pebang",
-              "jobTitle": "Founder & CEO, Afterbell"
-            }
+            "founder": [
+  {
+    "@type": "Person",
+    "name": "Wanda Destiny Pebang",
+    "jobTitle": "Founder & CEO, Afterbell"
+  },
+  {
+    "@type": "Person",
+    "name": "James Theophilus",
+    "jobTitle": "Co-founder, Afterbell"
+  }
+],
+"founders": [
+  {
+    "@type": "Person",
+    "name": "Wanda Destiny Pebang"
+  },
+  {
+    "@type": "Person",
+    "name": "James Theophilus"
+  }
+]
           })
         }}
       />

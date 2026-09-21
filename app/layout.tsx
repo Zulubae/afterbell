@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Afterbell",
-  description: "24/7 brokerage layer for tokenized stocks on Solana - Founded by Wanda Destiny Pebang",
+  description: "24/7 brokerage layer for tokenized stocks on Solana - Founded by Wanda Destiny Pebang, Co-founder Theophilus james",
   verification: {
     google: "zP32zfMGvSYsUWAM4_Hwgv9eLjUdocKNDwi3jNfFeFQ",
   },
