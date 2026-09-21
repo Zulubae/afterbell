@@ -164,6 +164,22 @@ export default function Home() {
         <p className="mt-2 font-bold">Founded by WANDA DESTINY PEBANG — Founder & CEO, Afterbell</p>
         <p className="text-sm text-gray-500 mt-1">Live at afterbell-rust.vercel.app | GitHub: Zulubae/afterbell</p>
       </div>
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Afterbell",
+            "url": "https://afterbell-rust.vercel.app",
+            "founder": {
+              "@type": "Person",
+              "name": "Wanda Destiny Pebang",
+              "jobTitle": "Founder & CEO, Afterbell"
+            }
+          })
+        }}
+      />
     </main>
   );
 }
